@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1.删除数组中的重复项-leetcode23 | 郭俊清的个人博客</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="My blog about me">
+    <link rel="preload" href="/assets/css/0.styles.f54878d4.css" as="style"><link rel="preload" href="/assets/js/app.4492a22b.js" as="script"><link rel="preload" href="/assets/js/2.b92c9386.js" as="script"><link rel="preload" href="/assets/js/11.e65c45c0.js" as="script"><link rel="prefetch" href="/assets/js/10.bf2a61cc.js"><link rel="prefetch" href="/assets/js/12.7ff2e262.js"><link rel="prefetch" href="/assets/js/13.f919a56c.js"><link rel="prefetch" href="/assets/js/14.f90bcd9e.js"><link rel="prefetch" href="/assets/js/15.cd91b41a.js"><link rel="prefetch" href="/assets/js/16.d77db93a.js"><link rel="prefetch" href="/assets/js/17.a8667f17.js"><link rel="prefetch" href="/assets/js/18.9848a0d1.js"><link rel="prefetch" href="/assets/js/19.cbb28034.js"><link rel="prefetch" href="/assets/js/20.4b1bfe64.js"><link rel="prefetch" href="/assets/js/21.850ce3a4.js"><link rel="prefetch" href="/assets/js/22.d287a146.js"><link rel="prefetch" href="/assets/js/23.b21eba54.js"><link rel="prefetch" href="/assets/js/24.8de03285.js"><link rel="prefetch" href="/assets/js/25.7c6cccef.js"><link rel="prefetch" href="/assets/js/26.b2aaa7fb.js"><link rel="prefetch" href="/assets/js/27.b633b196.js"><link rel="prefetch" href="/assets/js/28.463ebf9a.js"><link rel="prefetch" href="/assets/js/29.e728783b.js"><link rel="prefetch" href="/assets/js/3.618e7af5.js"><link rel="prefetch" href="/assets/js/30.1ba79371.js"><link rel="prefetch" href="/assets/js/31.c61c88f1.js"><link rel="prefetch" href="/assets/js/32.36f43b5d.js"><link rel="prefetch" href="/assets/js/33.09ce9340.js"><link rel="prefetch" href="/assets/js/34.260bef8e.js"><link rel="prefetch" href="/assets/js/4.151a4cb1.js"><link rel="prefetch" href="/assets/js/5.c47db464.js"><link rel="prefetch" href="/assets/js/6.8d90762d.js"><link rel="prefetch" href="/assets/js/7.22fec0ce.js"><link rel="prefetch" href="/assets/js/8.ec202752.js"><link rel="prefetch" href="/assets/js/9.a394d1bf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f54878d4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">郭俊清的个人博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/index/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/js/" class="nav-link">
+  JS
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/algorithms/" class="nav-link router-link-active">
+  algorithms
+</a></div><div class="nav-item"><a href="/structures/" class="nav-link">
+  structures
+</a></div><div class="nav-item"><a href="/network/" class="nav-link">
+  network
+</a></div><div class="nav-item"><a href="/node/" class="nav-link">
+  node
+</a></div><div class="nav-item"><a href="https://github.com/qhappyman" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/index/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/js/" class="nav-link">
+  JS
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/algorithms/" class="nav-link router-link-active">
+  algorithms
+</a></div><div class="nav-item"><a href="/structures/" class="nav-link">
+  structures
+</a></div><div class="nav-item"><a href="/network/" class="nav-link">
+  network
+</a></div><div class="nav-item"><a href="/node/" class="nav-link">
+  node
+</a></div><div class="nav-item"><a href="https://github.com/qhappyman" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>双指针</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithms/pointer/pointer.html" aria-current="page" class="active sidebar-link">1.删除数组中的重复项-leetcode23</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/algorithms/pointer/pointer.html#_1-删除数组中的重复项-leetcode23" class="sidebar-link">1.删除数组中的重复项-leetcode23</a></li><li class="sidebar-sub-header"><a href="/algorithms/pointer/pointer.html#_2-链表中倒数第k个节点-剑指offer22" class="sidebar-link">2.链表中倒数第k个节点-剑指offer22</a></li><li class="sidebar-sub-header"><a href="/algorithms/pointer/pointer.html#_3-二维数组中的查找-剑指offer04" class="sidebar-link">3.二维数组中的查找-剑指offer04</a></li><li class="sidebar-sub-header"><a href="/algorithms/pointer/pointer.html#_4-合并排序的数组-面试题10-01" class="sidebar-link">4.合并排序的数组-面试题10.01</a></li><li class="sidebar-sub-header"><a href="/algorithms/pointer/pointer.html#_5-验证回文串-leetcode-125" class="sidebar-link">5.验证回文串-leetcode-125</a></li><li class="sidebar-sub-header"><a href="/algorithms/pointer/pointer.html#_6-移动零-leetcode-283" class="sidebar-link">6.移动零-leetcode-283</a></li><li class="sidebar-sub-header"><a href="/algorithms/pointer/pointer.html#_7-最接近的三数之和-leetcode-16" class="sidebar-link">7.最接近的三数之和-leetcode-16</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>二叉树</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>位运算</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>动态规划</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>排序算法</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>滑动窗口</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>递归</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>BFS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>DFS</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_1-删除数组中的重复项-leetcode23"><a href="#_1-删除数组中的重复项-leetcode23" class="header-anchor">#</a> 1.删除数组中的重复项-leetcode23</h2> <div class="language- extra-class"><pre class="language-text"><code>var removeDuplicates = function (nums) {
+    if (nums.length === 0) return 0;
+    let pointer1 = 0;   //慢指针
+    for (let pointer2 = 0; pointer2 &lt; nums.length; pointer2++) {   //快指针
+        if (nums[pointer1] !== nums[pointer2]) {
+            pointer1++;
+            nums[pointer1] = nums[pointer2]
+        }                   
+        //快慢指针值不相同时，慢指针前进并赋值为快指针的值
+    }
+    return pointer1 + 1;
+};
+</code></pre></div><h2 id="_2-链表中倒数第k个节点-剑指offer22"><a href="#_2-链表中倒数第k个节点-剑指offer22" class="header-anchor">#</a> 2.链表中倒数第k个节点-剑指offer22</h2> <h3 id="双指针"><a href="#双指针" class="header-anchor">#</a> 双指针</h3> <div class="language- extra-class"><pre class="language-text"><code>class Solution {
+    public ListNode getKthFromEnd(ListNode head, int k) {
+        ListNode last = head;
+        ListNode fast = head;       //设置快慢俩个指针，先让快指针移动k个单位
+        if(head.next==null&amp;&amp;k==1){      
+            return head;
+        }
+        for(;k&gt;0;k--){
+            fast = fast.next;
+        }
+        while(fast!=null){          //快慢指针一起向后移，直到快指针指向null，此时慢指针就是要找的倒数第k个
+            last = last.next;
+            fast = fast.next;
+        }
+        return last;
+    }
+}
+</code></pre></div><h3 id="使用栈"><a href="#使用栈" class="header-anchor">#</a> 使用栈</h3> <div class="language- extra-class"><pre class="language-text"><code>var getKthFromEnd = function(head, k) {
+    let stack = [];
+    let result;
+    while(head){            //先将所有元素从头到尾入栈
+        stack.push(head);
+        head=head.next;
+    }
+    for(;k&gt;0;k--){          //依次取出k个元素，结果为倒数第k个节点
+        result = stack.pop();
+    }
+    return result;
+};
+</code></pre></div><p>对于要求返回值的，直接返回head.val,比如:<strong>leetcode-面试题 02.02. 返回倒数第 k 个节点</strong></p> <h2 id="_3-二维数组中的查找-剑指offer04"><a href="#_3-二维数组中的查找-剑指offer04" class="header-anchor">#</a> 3.二维数组中的查找-剑指offer04</h2> <h3 id="暴力遍历"><a href="#暴力遍历" class="header-anchor">#</a> 暴力遍历</h3> <div class="language- extra-class"><pre class="language-text"><code>var findNumberIn2DArray = function(matrix, target) {
+    if(matrix.length===0) return false;
+    for(let i =0;i&lt;matrix.length;i++){
+        for(let j = 0;j&lt;matrix[0].length;j++){
+            if(matrix[i][j]===target){
+                return true;
+            }
+        }
+    }
+    return false;
+};
+</code></pre></div><h4 id="缺点："><a href="#缺点：" class="header-anchor">#</a> 缺点：</h4> <p>复杂度过高，可以达到O(nm)，而且没有利用价值所给数组的已排序特性</p> <h3 id="双指针-2"><a href="#双指针-2" class="header-anchor">#</a> 双指针</h3> <div class="language- extra-class"><pre class="language-text"><code>class Solution {
+    public boolean findNumberIn2DArray(int[][] matrix, int target) {
+        if(matrix == null || matrix.length == 0) {
+            return false;
+        }
+        int width = matrix[0].length-1; 
+        int height = matrix.length;   
+        int row=0;
+        while(row&lt;height&amp;&amp;width&gt;=0){
+            if(matrix[row][width]&gt;target){
+                width--;
+            }
+            else if(matrix[row][width]&lt;target){
+                row++;
+            }
+            else {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+</code></pre></div><h4 id="原理："><a href="#原理：" class="header-anchor">#</a> 原理：</h4> <p>由于给定的二维数组具备每行从左到右递增以及每列从上到下递增的特点，当访问到一个元素时，可以排除数组中的部分元素。
+从二维数组的右上角开始查找。如果当前元素等于目标值，则返回 true。如果当前元素大于目标值，则移到左边一列。如果当前元素小于目标值，则移到下边一行。
+可以证明这种方法不会错过目标值。如果当前元素大于目标值，说明当前元素的下边的所有元素都一定大于目标值，因此往下查找不可能找到目标值，往左查找可能找到目标值。如果当前元素小于目标值，说明当前元素的左边的所有元素都一定小于目标值，因此往左查找不可能找到目标值，往下查找可能找到目标值</p> <h2 id="_4-合并排序的数组-面试题10-01"><a href="#_4-合并排序的数组-面试题10-01" class="header-anchor">#</a> 4.合并排序的数组-面试题10.01</h2> <h3 id="合并后排序-mereg-sort"><a href="#合并后排序-mereg-sort" class="header-anchor">#</a> 合并后排序(mereg+sort)</h3> <div class="language- extra-class"><pre class="language-text"><code>var merge = function(A, m, B, n) {
+    for(const i of B){
+        A[m++]=i;
+    }
+    A.sort((a,b)=&gt;a-b)
+};
+</code></pre></div><h3 id="逆向双指针"><a href="#逆向双指针" class="header-anchor">#</a> 逆向双指针</h3> <div class="language- extra-class"><pre class="language-text"><code>class Solution {
+    public void merge(int[] A, int m, int[] B, int n) {
+        int lon = m+n-1;
+        int n1 = n-1,m1=m-1;
+        while(m1&gt;=0||n1&gt;=0){
+            if(m1==-1){         //当A数组已经全部排序后，将B数组依次放入A前面
+                A[lon--]=B[n1--];
+            }
+            else if(n1==-1){    //B数组为空时，将A数组全部放入A前面，也就是原地不动
+                A[lon--]=A[m1--];
+            }
+            else if(B[n1]&gt;A[m1]){
+                A[lon--]=B[n1--];
+            }
+            else if(B[n1]&lt;A[m1]){
+                A[lon--]=A[m1--];
+            }
+            else{
+                A[lon--]=B[n1--];
+            }
+        }
+    }
+
+}
+</code></pre></div><h4 id="原理"><a href="#原理" class="header-anchor">#</a> 原理</h4> <p>因为A数组的空间足够大,所以指针设置为从后向前遍历，每次取两者之中的较大者放进 A 的最后面,不会出现A数组空间不足的现象</p> <h2 id="_5-验证回文串-leetcode-125"><a href="#_5-验证回文串-leetcode-125" class="header-anchor">#</a> 5.验证回文串-leetcode-125</h2> <h3 id="双指针-3"><a href="#双指针-3" class="header-anchor">#</a> 双指针</h3> <div class="language- extra-class"><pre class="language-text"><code>var isPalindrome = function(s) {
+    let news =s.replace(/[, .:@#$%^&amp;*\-\[\]\{\}&quot;`'\_\?;!\(\)]/g,&quot;&quot;)   //去除掉所有非数字字母
+    news = news.toLowerCase();      //全部转化为小写
+    let num = news.length;
+    for(let i=0;i&lt;=news.length/2;i++){
+        if(news[i]!==news[num-i-1]){
+            return false;
+        }
+    }
+    return true;
+};
+</code></pre></div><h3 id="java"><a href="#java" class="header-anchor">#</a> java</h3> <div class="language- extra-class"><pre class="language-text"><code>class Solution {
+    public boolean isPalindrome(String s) {
+        if (s == null || s.length() == 0)
+            return true;
+        s = s.toLowerCase();
+        for (int i = 0, j = s.length() - 1; i &lt; j; i++, j--) {
+            while (i &lt; j &amp;&amp; !Character.isLetterOrDigit(s.charAt(i)))
+                i++;
+            while (i &lt; j &amp;&amp; !Character.isLetterOrDigit(s.charAt(j)))
+                j--;
+            if (s.charAt(i) != s.charAt(j))
+                return false;
+        }
+        return true;
+    }
+}
+</code></pre></div><h2 id="_6-移动零-leetcode-283"><a href="#_6-移动零-leetcode-283" class="header-anchor">#</a> 6.移动零-leetcode-283</h2> <h3 id="双指针-java"><a href="#双指针-java" class="header-anchor">#</a> 双指针(java)</h3> <div class="language- extra-class"><pre class="language-text"><code>class Solution {
+    public void moveZeroes(int[] nums) {
+        int slow=0;
+        for(int i = 0;i&lt;nums.length;i++){
+            if(nums[i]!=0){         //遍历数组，遇到非0元素则依次加入到slow指针处,遇到0元素只移动快指针
+                nums[slow++]=nums[i];
+            }
+        }
+        for(;slow&lt;nums.length;slow++){   //遍历完一遍后,slow指针指向的位置后所有非0元素已经移动到最前面，此时进行补0
+            nums[slow]=0;
+        }
+    }
+}
+</code></pre></div><h4 id="图解"><a href="#图解" class="header-anchor">#</a> 图解</h4> <p><img src="https://pic.leetcode-cn.com/9669b4ffb158eaeeee6f0cd66a70f24411575edab1ab8a037c4c9084b1c743f5-283_1.gif" alt=""></p> <h3 id="双指针2"><a href="#双指针2" class="header-anchor">#</a> 双指针2</h3> <div class="language- extra-class"><pre class="language-text"><code>var moveZeroes = function(nums) {
+    let slow=0;
+    for(let i=0;i&lt;nums.length;i++){
+        if(nums[i]!=0){
+            [nums[slow],nums[i]]=[nums[i],nums[slow]]   //当快指针指向的元素非零时，交换俩个元素，快慢指针一起向前移动
+            slow++;
+        }
+    }                                                   //快指针指向的元素为0时，只移动快指针
+};
+</code></pre></div><h4 id="图解-2"><a href="#图解-2" class="header-anchor">#</a> 图解</h4> <p><img src="https://pic.leetcode-cn.com/36d1ac5d689101cbf9947465e94753c626eab7fcb736ae2175f5d87ebc85fdf0-283_2.gif" alt=""></p> <h2 id="_7-最接近的三数之和-leetcode-16"><a href="#_7-最接近的三数之和-leetcode-16" class="header-anchor">#</a> 7.最接近的三数之和-leetcode-16</h2> <div class="language- extra-class"><pre class="language-text"><code>class Solution {
+    public int threeSumClosest(int[] nums, int target) {
+        Arrays.sort(nums);          //先对数组进行排序
+        int result=nums[0] + nums[1] + nums[nums.length - 1];
+        for(int i=0;i&lt;nums.length-2;i++){
+            int slow=i+1,fast=nums.length-1;   //头指针为每次遍历的i后一个元素为起点,快指针指向数组尾
+            while(slow&lt;fast){
+                int val=nums[i]+nums[slow]+nums[fast];
+                if(Math.abs(val-target)&lt;Math.abs(result-target)){
+                    result=val;                 //将新的三数之和与原始值比较，进而更新原始值
+                }
+                if(val&gt;target){                 //如果结果比target大，则向前移动指针
+                    fast--;
+                }
+                else if(val&lt;target){
+                    slow++;
+                }
+                else{
+                    return val;                 //如果三数之和刚好为target，返回val，程序结束
+                }
+            }
+        }
+        return result;
+    }
+}
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/algorithms/pointer/pointer.html" aria-current="page" class="router-link-exact-active router-link-active">
+        1.删除数组中的重复项-leetcode23
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.4492a22b.js" defer></script><script src="/assets/js/2.b92c9386.js" defer></script><script src="/assets/js/11.e65c45c0.js" defer></script>
+  </body>
+</html>
